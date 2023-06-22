@@ -13,6 +13,10 @@ public class EstudianteDistancia extends Estudiante {
     
     int numeroAsignaturas;
     double costoAsignatura;
+
+    public EstudianteDistancia(String nombre, String apellido, String id, int ed) {
+        super(nombre, apellido, id, ed);
+    }
     
     //  Métodos establecer y calcular para los datos o atributos de la clase
     
@@ -42,5 +46,24 @@ public class EstudianteDistancia extends Estudiante {
     public double obtenerCostoAsignatura(){
         return costoAsignatura;
     }
-        
+       @Override
+    public String toString() {
+        String cadena = String.format(
+                "Nombres: %s\n"
+                + "Apellidos: %s\n"
+                + "Identificación: %s\n"
+                + "Edad: %d\n"
+                + "Numero Asignaturas: %d\n"
+                + "Costo Asignatura: %.2f\n"
+                + "Costo Matricula: %.2f\n",
+                obtenerNombresEstudiante(),
+                obtenerApellidoEstudiante(),
+                obtenerIdentificacionEstudiante(),
+                obtenerEdadEstudiante(),
+                obtenerNumeroAsignaturas(),
+                obtenerCostoAsignatura(),
+                obtenerMatricula());
+        return cadena;
+    }
+   
 }
